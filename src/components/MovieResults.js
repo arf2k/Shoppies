@@ -1,24 +1,14 @@
-import React, { useEffect } from "react";
+import React, {useState} from "react";
 
-let apiKey = process.env.REACT_APP_OMDB_KEY;
 
 function MovieResults(props) {
-     let results = props.searchTerm 
+     // let results = props.movieResults
 
-      const componentDidMount = () => {
-          fetch(`http://www.omdbapi.com/?t=${results}&apikey=${apiKey}`)
-            .then((resp) => resp.json())
-            .then((data) => {
-              console.log(data);
-          //     setApi(data);
-            });
-        }
-  
-  componentDidMount()
-     return (
+return (
      <h1>list</h1>
-     // <li>renderResults()</li>
-     )
+)
+
+
 }
 
 export default MovieResults;
