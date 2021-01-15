@@ -1,11 +1,22 @@
-import React, {useState} from "react";
+import React from "react";
+import MovieCard from './MovieCard.js'
 
 
 function MovieResults(props) {
-     // let results = props.movieResults
+
+  
+     const renderedMovies = () => { 
+          props.movieResults.map((movie, index) => {
+               return (<li key={index}> {movie.Title}</li>)})
+          }
+          
 
 return (
-     <h1>list</h1>
+     <>
+     <h1>Movies</h1>
+     {renderedMovies()}
+     </>
+     
 )
 
 
