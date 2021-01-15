@@ -4,17 +4,20 @@ import MovieCard from './MovieCard.js'
 
 function MovieResults(props) {
 
-  
-     const renderedMovies = () => { 
-          props.movieResults.map((movie, index) => {
-               return (<li key={index}> {movie.Title}</li>)})
-          }
-          
+
+     let renderedMovies;
+     if (props.movieResults) {
+       renderedMovies = props.movieResults.map(movie => {
+         return <MovieCard key={movie.id} movie={movie} />})
+     } else {
+       console.log("loading")
+     }
+
 
 return (
      <>
-     <h1>Movies</h1>
-     {renderedMovies()}
+     <h1>Movie Selections</h1>
+     {renderedMovies}
      </>
      
 )

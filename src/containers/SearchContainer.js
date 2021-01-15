@@ -14,6 +14,7 @@ function SearchContainer() {
       axios
         .get(`http://www.omdbapi.com/?s=${searchTerm}&apikey=${key}`)
         .then((response) => {
+          console.log(response.data.Search)
           setMovieResults(response.data.Search);
         });
     };
@@ -22,14 +23,7 @@ function SearchContainer() {
   }, [searchTerm]);
 
   
-      let renderedMovies;
-      if (movieResults) {
-        renderedMovies = movieResults.map(movie => {
-          return <li key={movie.id}>{movie.Title}</li>})
-      } else {
-        console.log("loading")
-      }
-
+   
 
   
 
@@ -49,7 +43,7 @@ function SearchContainer() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </Segment>
-      {renderedMovies}
+      <MovieResults movieResults={movieResults}/>
     </>
   );
 }
