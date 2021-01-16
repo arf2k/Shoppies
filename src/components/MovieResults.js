@@ -8,7 +8,7 @@ function MovieResults(props) {
      let renderedMovies;
      if (props.movieResults) {
        renderedMovies = props.movieResults.map(movie => {
-         return <MovieCard key={movie.id} movie={movie} />})
+         return <MovieCard key={movie.id} movie={movie} addNominee={props.addNominee} />})
      } else {
        console.log("loading")
      }
