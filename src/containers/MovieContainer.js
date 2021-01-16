@@ -25,14 +25,18 @@ function MovieContainer() {
     getMovies();
   }, [searchTerm]);
 
-  const addNominee = (movieObj) => {
-    setNomination([...nomination, movieObj])
+  const addNominee = (movie) => {
+    setNomination([...nomination, movie])
 
   }
 
+  const deleteNominee = (id) => {
+    const newList = nomination.filter((movie) => movie !== id)
+    setNomination(newList)   
+}
 
 
-console.log(nomination)
+
   return (
     <>
     <div className="searchBar">
@@ -49,9 +53,11 @@ console.log(nomination)
  </div>
  <div className="resAndNom" style={{display: "flex", flexDirection: "row"}}>
     <div className="results">
-  <MovieResults movieResults={movieResults} addNominee={addNominee} />
+  <MovieResults movieResults={movieResults} addNominee={addNominee}  />
   </div>
-  <Nominations nomination={nomination} />
+  <div className="noms">
+      <Nominations nomination={nomination} deleteNominee={deleteNominee}/>
+  </div>
   </div>
 
 

@@ -2,13 +2,13 @@ import React from "react";
 import MovieCard from './MovieCard.js'
 
 
-function MovieResults(props) {
+const MovieResults = (props) => {
 
 
      let renderedMovies;
      if (props.movieResults) {
        renderedMovies = props.movieResults.map(movie => {
-         return <MovieCard key={movie.id} movie={movie} addNominee={props.addNominee}  />})
+         return <MovieCard key={movie.id} movie={movie} addNominee={props.addNominee} parent={"results"}  />})
      } else {
        console.log("loading")
      }

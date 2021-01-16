@@ -1,13 +1,58 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Card, Image, Button, Icon } from "semantic-ui-react";
 
-function MovieCard(props) {
-  
-  const [disabled, setDisabled] = useState(false)
-  
- const disable = () =>{
-   setDisabled(true)
- }
+const MovieCard = (props) => {
+  const [disabled, setDisabled] = useState(false);
+
+  const disable = () => {
+    setDisabled(true);
+  };
+
+  // const showButton = () => {
+
+  //   if(props.parent === "results")  {
+  //    return (
+  //     <Button
+  //       disabled={disabled}
+  //       onClick={() => {
+  //         {
+  //           props.addNominee(props.movie);
+  //         }
+  //         disable();
+  //       }}
+  //     >
+  //       <Icon name="trophy" />
+  //       Nominate
+  //     </Button> )
+  //     } else if(props.parent === "nomination") {
+  //       return (
+  //     <Button onClick={() => props.deleteNominee(props.movie.id)}>
+  //       <Icon name="delete" />
+  //       Remove
+  //     </Button>
+  //   )};
+  //       }
+
+  let button =
+    props.parent === "results" ? 
+      <Button
+        disabled={disabled}
+        onClick={() => {
+          {
+            props.addNominee(props.movie);
+          }
+          disable();
+        }}
+      >
+        <Icon name="trophy" />
+        Nominate
+      </Button>
+     : 
+      <Button onClick={() => props.deleteNominee(props.movie)}>
+        <Icon name="delete" />
+        Remove
+      </Button>
+    ;
 
   return (
     <>
@@ -19,17 +64,12 @@ function MovieCard(props) {
             <Card.Meta>{props.movie.Year}</Card.Meta>
           </Card.Content>
           <Card.Content extra>
-            <div className="ui one button">
-              <Button icon disabled={disabled} labelPosition="left" onClick={() => { {props.addNominee(props.movie)}disable()}} >
-                <Icon name="trophy" />
-                Nominate
-              </Button>
-            </div>
+            <div className="ui one button">{button}</div>
           </Card.Content>
         </Card>
       </Card.Group>
     </>
   );
-}
+};
 
 export default MovieCard;
