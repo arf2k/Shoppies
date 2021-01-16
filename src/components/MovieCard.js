@@ -41,7 +41,8 @@ const MovieCard = (props) => {
           {
             props.addNominee(props.movie);
           }
-          disable();
+          disable()
+          ;
         }}
       >
         <Icon name="trophy" />

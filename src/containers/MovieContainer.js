@@ -10,7 +10,7 @@ function MovieContainer() {
   const [searchTerm, setSearchTerm] = useState("");
   const [movieResults, setMovieResults] = useState([]);
   const [nomination, setNomination] = useState([])
-
+  const [count, setCount] = useState(0)
 
 
   useEffect(() => {
@@ -27,16 +27,18 @@ function MovieContainer() {
 
   const addNominee = (movie) => {
     setNomination([...nomination, movie])
+    setCount(count + 1)
 
   }
 
   const deleteNominee = (id) => {
     const newList = nomination.filter((movie) => movie !== id)
-    setNomination(newList)   
+    setNomination(newList)
+    setCount(count - 1)   
 }
 
 
-
+console.log(count)
   return (
     <>
     <div className="searchBar">
@@ -53,10 +55,10 @@ function MovieContainer() {
  </div>
  <div className="resAndNom" style={{display: "flex", flexDirection: "row"}}>
     <div className="results">
-  <MovieResults movieResults={movieResults} addNominee={addNominee}  />
+  <MovieResults movieResults={movieResults} addNominee={addNominee} count={count}  />
   </div>
   <div className="noms">
-      <Nominations nomination={nomination} deleteNominee={deleteNominee}/>
+      <Nominations nomination={nomination} deleteNominee={deleteNominee} count={count}/>
   </div>
   </div>
 
