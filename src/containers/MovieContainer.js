@@ -11,6 +11,8 @@ function MovieContainer() {
   const [movieResults, setMovieResults] = useState([]);
   const [nomination, setNomination] = useState([])
 
+
+
   useEffect(() => {
     const getMovies = () => {
       axios
@@ -25,6 +27,7 @@ function MovieContainer() {
 
   const addNominee = (movieObj) => {
     setNomination([...nomination, movieObj])
+
   }
 
 

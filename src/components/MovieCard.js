@@ -1,7 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import { Card, Image, Button, Icon } from "semantic-ui-react";
 
 function MovieCard(props) {
+  
+  const [disabled, setDisabled] = useState(false)
+  
+ const disable = () =>{
+   setDisabled(true)
+ }
+
   return (
     <>
       <Card.Group>
@@ -13,7 +20,7 @@ function MovieCard(props) {
           </Card.Content>
           <Card.Content extra>
             <div className="ui one button">
-              <Button icon labelPosition="left" onClick={() => {props.addNominee(props.movie)}} >
+              <Button icon disabled={disabled} labelPosition="left" onClick={() => { {props.addNominee(props.movie)}disable()}} >
                 <Icon name="trophy" />
                 Nominate
               </Button>
