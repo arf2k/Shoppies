@@ -1,5 +1,5 @@
 [build]
 publish="build/"
-functions="functions"
-environment="API_TOKEN"
-environment="API_URL"
+functions="functions/"
+env="API_TOKEN"
+env="API_URL"
