@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 let key = process.env.REACT_APP_OMDB_KEY;
 
-function MovieContainer() {
+const MovieContainer = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [movieResults, setMovieResults] = useState([]);
   const [nomination, setNomination] = useState([]);
@@ -18,7 +18,6 @@ function MovieContainer() {
       axios
         .get(`http://www.omdbapi.com/?s=${searchTerm}&apikey=${key}`)
         .then((response) => {
-          console.log(response.data.Search);
           setMovieResults(response.data.Search);
         });
     };
