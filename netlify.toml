@@ -1,3 +1,5 @@
 [build]
 publish="build/"
 functions="functions"
+env var= "API_TOKEN"
+env var= "API_URL"
