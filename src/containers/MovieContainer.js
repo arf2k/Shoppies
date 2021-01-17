@@ -5,7 +5,7 @@ import axios from "axios";
 import Nominations from "../components/Nominations.js";
 import styled from "styled-components";
 
-let key = process.env.REACT_APP_KEY;
+let key = process.env.API_TOKEN;
 
 const MovieContainer = () => {
   const [searchTerm, setSearchTerm] = useState("");
