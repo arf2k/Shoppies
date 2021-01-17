@@ -1,5 +1,6 @@
 {
   "name": "shoppies",
+  "proxy": "http://localhost:9000/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,6 +10,9 @@
     "axios": "^0.21.1",
     "lodash": "^4.17.20",
     "lodash.remove": "^4.7.0",
+    "netlify-lambda": "^2.0.2",
+    "node-fetch": "^2.6.1",
+    "npm-run-all": "^4.1.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",

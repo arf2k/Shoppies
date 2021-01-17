@@ -4,7 +4,12 @@ import MovieContainer from './containers/MovieContainer.js'
 import styled from 'styled-components'
 
 
-function App() {
+const App = () => {
+  
+ 
+
+  
+  
   return (
     <>
     <Background>

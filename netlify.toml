@@ -1,3 +1,4 @@
 [build]
+Command = "npm run build"
 publish="build/"
-functions="functions/"
+functions=".netlify/lambda"
