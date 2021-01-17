@@ -1,4 +1,4 @@
 [build]
-Command = "npm run build"
+Command = "npm run build && process.env.REACT_APP_KEY"
 publish="build/"
 
