@@ -13,9 +13,8 @@ const MovieCard = (props) => {
       <Button
         disabled={disabled}
         onClick={() => {
-          {
-            props.addNominee(props.movie);
-          }
+          props.addNominee(props.movie);
+
           disable();
         }}
       >
