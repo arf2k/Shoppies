@@ -7,8 +7,10 @@ import styled from 'styled-components'
 function App() {
   return (
     <>
+    <Background>
     <Title>Welcome to The Shoppies: Search and Pick</Title>
     <MovieContainer/>
+    </Background>
     </>
   );
 }
@@ -17,4 +19,8 @@ export default App;
 
 const Title = styled.h1`
 text-align: Center 
+`
+const Background = styled.section`
+background-color: #5D85A2
+
 `

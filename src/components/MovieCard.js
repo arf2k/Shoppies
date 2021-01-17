@@ -8,47 +8,20 @@ const MovieCard = (props) => {
     setDisabled(true);
   };
 
-  const countDisable = () => {
-    if(props.count >= 5){
-    setDisabled(true)
-    }
-  }
+  
 
-  // const showButton = () => {
-
-  //   if(props.parent === "results")  {
-  //    return (
-  //     <Button
-  //       disabled={disabled}
-  //       onClick={() => {
-  //         {
-  //           props.addNominee(props.movie);
-  //         }
-  //         disable();
-  //       }}
-  //     >
-  //       <Icon name="trophy" />
-  //       Nominate
-  //     </Button> )
-  //     } else if(props.parent === "nomination") {
-  //       return (
-  //     <Button onClick={() => props.deleteNominee(props.movie.id)}>
-  //       <Icon name="delete" />
-  //       Remove
-  //     </Button>
-  //   )};
-  //       }
+ 
 
   let button =
     props.parent === "results" ? 
       <Button
+       
         disabled={disabled}
         onClick={() => {
           {
             props.addNominee(props.movie);
           }
           disable()
-          countDisable()
           ;
         }}
       >
@@ -65,7 +38,7 @@ const MovieCard = (props) => {
   return (
     <>
       <Card.Group>
-        <Card>
+        <Card style={{backgroundColor: "#63A25D"}}>
           <Card.Content>
             <Image floated="left" size="mini" src={props.movie.Poster} />
             <Card.Header>{props.movie.Title}</Card.Header>

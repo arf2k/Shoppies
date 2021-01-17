@@ -27,7 +27,7 @@ function MovieContainer() {
 
   const addNominee = (movie) => {
     if (count >= 5) {
-      alert("Nomination total reached. Please remove selections to add more.");
+      alert("Nomination total reached. Please remove nominations to add more.");
     } else {
       setNomination([...nomination, movie]);
       setCount(count + 1);
@@ -43,7 +43,7 @@ function MovieContainer() {
   return (
     <>
       <SearchBar>
-        <Segment>
+        <Segment style={{backgroundColor: "#63A25D"}}>
           <Input
             icon="search"
             type="text"
@@ -83,9 +83,11 @@ const ResAndNom = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  height: 200vh
 `;
 
 const Results = styled.div`
+// margin-top: 25px
 border-style: inset;
 border-width: thick;
 padding: 150px;
@@ -93,8 +95,10 @@ padding-top: 75px;
 `;
 
 const Noms = styled.div`
+// margin-top: 25px
 border-style: inset;
 border-width: thick;
 padding: 150px;
 padding-top: 75px;
+
 `;
