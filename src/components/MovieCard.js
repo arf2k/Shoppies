@@ -8,6 +8,12 @@ const MovieCard = (props) => {
     setDisabled(true);
   };
 
+  const countDisable = () => {
+    if(props.count >= 5){
+    setDisabled(true)
+    }
+  }
+
   // const showButton = () => {
 
   //   if(props.parent === "results")  {
@@ -42,6 +48,7 @@ const MovieCard = (props) => {
             props.addNominee(props.movie);
           }
           disable()
+          countDisable()
           ;
         }}
       >
