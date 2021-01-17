@@ -8,7 +8,7 @@ function App() {
   return (
     <>
     <Background>
-    <Title>Welcome to The Shoppies: Search and Pick</Title>
+    <Title>Welcome to The Shoppies: Search and Pick 5 Nominees</Title>
     <MovieContainer/>
     </Background>
     </>

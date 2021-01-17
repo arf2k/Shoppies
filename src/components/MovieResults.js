@@ -1,5 +1,6 @@
 import React from "react";
 import MovieCard from './MovieCard.js'
+import styled from 'styled-components'
 
 
 const MovieResults = (props) => {
@@ -16,7 +17,7 @@ const MovieResults = (props) => {
 
 return (
      <>
-     <h1>Movie Selections</h1>
+     <Title>Movie Selections</Title>
      {renderedMovies}
      </>
      
@@ -26,3 +27,7 @@ return (
 }
 
 export default MovieResults;
+
+const Title = styled.h1`
+text-align: center
+`

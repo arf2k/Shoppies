@@ -40,6 +40,12 @@ function MovieContainer() {
     setCount(count - 1);
   };
 
+  const displayBanner = () => {
+    return nomination.length === 5 ? (
+      <h1 style={{marginTop: "400px"}}>You've Picked 5 Nominees!</h1>
+    ) : null;
+  };
+
   return (
     <>
       <SearchBar>
@@ -62,6 +68,7 @@ function MovieContainer() {
             count={count}
           />
         </Results>
+    {displayBanner()}
         <Noms>
           <Nominations
             nomination={nomination}
@@ -83,21 +90,15 @@ const ResAndNom = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  height: 200vh
+  height: 300vh
 `;
 
 const Results = styled.div`
-// margin-top: 25px
-border-style: inset;
-border-width: thick;
 padding: 150px;
 padding-top: 75px;
 `;
 
 const Noms = styled.div`
-// margin-top: 25px
-border-style: inset;
-border-width: thick;
 padding: 150px;
 padding-top: 75px;
 

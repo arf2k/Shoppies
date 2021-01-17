@@ -8,37 +8,30 @@ const MovieCard = (props) => {
     setDisabled(true);
   };
 
-  
-
- 
-
   let button =
-    props.parent === "results" ? 
+    props.parent === "results" ? (
       <Button
-       
         disabled={disabled}
         onClick={() => {
           {
             props.addNominee(props.movie);
           }
-          disable()
-          ;
+          disable();
         }}
       >
         <Icon name="trophy" />
         Nominate
       </Button>
-     : 
+    ) : (
       <Button onClick={() => props.deleteNominee(props.movie)}>
         <Icon name="delete" />
         Remove
       </Button>
-    ;
-
+    );
   return (
     <>
       <Card.Group>
-        <Card style={{backgroundColor: "#63A25D"}}>
+        <Card style={{ backgroundColor: "#63A25D" }}>
           <Card.Content>
             <Image floated="left" size="mini" src={props.movie.Poster} />
             <Card.Header>{props.movie.Title}</Card.Header>

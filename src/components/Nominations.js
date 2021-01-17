@@ -12,16 +12,11 @@ const Nominations = (props) => {
     console.log("no noms yet");
   }
 
-  const displayBanner = () => {
-    return props.nomination.length === 5 ? (
-      <h1>You've reached 5 Nominees</h1>
-    ) : null;
-  };
+
 
   return (
     <>
       <Title>Nominations</Title>
-      {displayBanner()}
       {renderedNominees}
     </>
   );
