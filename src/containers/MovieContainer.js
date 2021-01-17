@@ -16,7 +16,7 @@ const MovieContainer = () => {
   useEffect(() => {
     const getMovies = () => {
       axios
-        .get(`http://www.omdbapi.com/?s=${searchTerm}&apikey=${key}`)
+        .get(`https://www.omdbapi.com/?s=${searchTerm}&apikey=${key}`)
         .then((response) => {
           setMovieResults(response.data.Search);
         });
