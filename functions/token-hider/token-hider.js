@@ -16,7 +16,7 @@ const handler = async function (event) {
   console.log('Constructed URL is ...', URL)
 
   try {
-    const { data } = await axios.get(URL)
+    const { data } = await axios.get(URL, {headers: {Accept: "application/json"}})
     // refer to axios docs for other methods if you need them
     // for example if you want to POST data:
     //    axios.post('/user', { firstName: 'Fred' })
