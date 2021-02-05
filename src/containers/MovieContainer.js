@@ -5,7 +5,6 @@ import axios from "axios";
 import Nominations from "../components/Nominations.js";
 import styled from "styled-components";
 
-let key = "11f2c5e1"
 
 const MovieContainer = () => {
   const [searchTerm, setSearchTerm] = useState("");
